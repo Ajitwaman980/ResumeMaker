@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Form</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <h1 class="text-center">Resume Form</h1>
+        <h1>Welcome <%= resume.username %>
+        </h1>
+        <form action="/profile/<%= resume.owner._id %>/resume/<%= resume._id %>/edit?_method=put" method="post">
+
+            <div class="mb-3">
+                <label for="username" aria-placeholder="full name" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="username" name="username" value="<%= resume.username %>">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" value="<%= resume.email %>">
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="text" class="form-control" id="phone" name="phone" value="<%= resume.phone %>">
+            </div>
+            <div class="mb-3">
+                <label for="location" class="form-label">Location</label>
+                <input type="text" class="form-control" id="location" name="location" value="<%= resume.location %>">
+            </div>
+            <div class="mb-3">
+                <label for="summary" class="form-label">Summary</label>
+                <textarea class="form-control" id="summary" name="summary" rows="3"><%= resume.summary %></textarea>
+            </div>
+
+            <h3>Experience</h3>
+            <div class="mb-3">
+                <label for="experience_position" class="form-label">Position</label>
+                <input type="text" class="form-control" id="experience_position" name="experience_position"
+                    value="<%= resume.experience_position %>">
+            </div>
+            <div class="mb-3">
+                <label for="experience_company" class="form-label">Company</label>
+                <input type="text" class="form-control" id="experience_company" name="experience_company"
+                    value="<%= resume.experience_company %>">
+            </div>
+            <div class="mb-3">
+                <label for="experience_startDate" class="form-label">Start Date</label>
+                <input type="text" class="form-control" id="experience_startDate" name="experience_startDate"
+                    value="<%= resume.experience_startDate %>">
+            </div>
+            <div class="mb-3">
+                <label for="experience_endDate" class="form-label">End Date</label>
+                <input type="text" class="form-control" id="experience_endDate" name="experience_endDate"
+                    value="<%= resume.experience_endDate %>">
+            </div>
+            <div class="mb-3">
+                <label for="experience_description" class="form-label">Description</label>
+                <textarea class="form-control" id="experience_description" name="experience_description"
+                    rows="2"><%= resume.experience_description %></textarea>
+            </div>
+
+            <h3>Education</h3>
+            <div class="mb-3">
+                <label for="education_degree" class="form-label">Degree</label>
+                <input type="text" class="form-control" id="education_degree" name="education_degree"
+                    value="<%= resume.education_degree %>">
+            </div>
+            <div class="mb-3">
+                <label for="education_institution" class="form-label">Institution</label>
+                <input type="text" class="form-control" id="education_institution" name="education_institution"
+                    value="<%= resume.education_institution %>">
+            </div>
+            <div class="mb-3">
+                <label for="education_startDate" class="form-label">Start Date</label>
+                <input type="text" class="form-control" id="education_startDate" name="education_startDate"
+                    value="<%= resume.education_startDate %>">
+            </div>
+            <div class="mb-3">
+                <label for="education_endDate" class="form-label">End Date</label>
+                <input type="text" class="form-control" id="education_endDate" name="education_endDate"
+                    value="<%= resume.education_endDate %>">
+            </div>
+            <div class="mb-3">
+                <label for="education_description" class="form-label">Description</label>
+                <textarea class="form-control" id="education_description" name="education_description"
+                    rows="2"><%= resume.education_description %></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="tenth_marks" class="form-label">10th Marks</label>
+                <input type="text" class="form-control" id="tenth_marks" name="tenth_marks"
+                    value="<%= resume.tenth_marks %>">
+            </div>
+            <div class="mb-3">
+                <label for="tenth_college" class="form-label">10th College</label>
+                <input type="text" class="form-control" id="tenth_college" name="tenth_college"
+                    value="<%= resume.tenth_college %>">
+            </div>
+            <div class="mb-3">
+                <label for="twelfth_marks" class="form-label">12th Marks</label>
+                <input type="text" class="form-control" id="twelfth_marks" name="twelfth_marks"
+                    value="<%= resume.twelfth_marks %>">
+            </div>
+            <div class="mb-3">
+                <label for="twelfth_college" class="form-label">12th College</label>
+                <input type="text" class="form-control" id="twelfth_college" name="twelfth_college"
+                    value="<%= resume.twelfth_college %>">
+            </div>
+            <div class="mb-3">
+                <label for="Skills" class="form-label">Skills (comma-separated)</label>
+                <input type="text" class="form-control" id="Skills" name="Skills" value="<%= resume.Skills %>" required>
+            </div>
+
+
+            <div class="mb-3">
+                <label for="hobbies" class="form-label">Hobbies</label>
+                <textarea class="form-control" id="hobbies" name="hobbies" rows="2"><%= resume.hobbies %></textarea>
+            </div>
+
+            <h3>Social Media</h3>
+            <div class="mb-3">
+                <label for="linkedin" class="form-label">LinkedIn</label>
+                <input type="url" class="form-control" id="linkedin" name="linkedin" value="<%= resume.linkedin %>">
+            </div>
+            <div class="mb-3">
+                <label for="github" class="form-label">GitHub</label>
+                <input type="url" class="form-control" id="github" name="github" value="<%= resume.github %>">
+            </div>
+            <div class="mb-3">
+                <label for="twitter" class="form-label">Twitter</label>
+                <input type="url" class="form-control" id="twitter" name="twitter" value="<%= resume.twitter %>">
+            </div>
+            <div class="mb-3">
+                <label for="leetcode" class="form-label">Leetcode</label>
+                <input type="url" class="form-control" id="leetcode" name="leetcode" value="<%= resume.leetcode %>">
+            </div>
+            <div class=" mb-3">
+                <label for="hackerrank" class="form-label">Hackerrank</label>
+                <input type="url" class="form-control" id="hackerrank" name="hackerrank"
+                    value="<%= resume.hackerrank %>">
+            </div>
+
+            <button type=" submit" class="btn btn-primary">Update Resume</button>
+        </form>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

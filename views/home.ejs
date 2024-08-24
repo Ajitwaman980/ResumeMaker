@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Maker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: #f5f6fa;
+            font-family: 'Arial', sans-serif;
+        }
+
+
+        .welcome-section {
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .welcome-section h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .welcome-section p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        .btn-custom {
+            background: #007bff;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .btn-custom:hover {
+            background: #0056b3;
+        }
+
+        .btn-success-custom {
+            background: #28a745;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .btn-success-custom:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+
+<body>
+    <% layout('navbar/navbar') %>
+
+        <div class="welcome-section">
+            <h1>Welcome to ResumeMaker</h1>
+            <p>Create a professional resume in minutes.</p>
+            <a href="/signUp" class="btn btn-custom btn-lg mx-2"> Create Resume</a>
+
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

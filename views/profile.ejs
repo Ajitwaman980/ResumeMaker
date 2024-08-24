@@ -1,0 +1,165 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<body class="p-2">
+    <% if (success.length> 0) { %>
+        <div class="alert text-white bg-success alert-dismissible fade show" role="alert">
+            <%= success %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <% } %>
+
+            <nav class="d-flex flex-row-reverse">
+                <a class="text-danger w-84" href="/logout">
+                    <i class="fas w-64 fa-sign-out-alt fa-lg"></i>
+                </a>
+            </nav>
+
+            <h1>Welcome <%= user.username %> 😇
+            </h1>
+            <style>
+                #herosections {
+                    height: 20vh;
+                    width: auto;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            </style>
+            <div id="herosections">
+                <h3>Build your resume with me with pride</h3>
+            </div>
+
+
+
+            <div class="container mt-3">
+                <h1 class="text-center">Resume Form</h1>
+                <form action="/profile/<%= user._id %>/resume/submit" method="post">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="username" name="username" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Phone</label>
+                        <input type="text" class="form-control" id="phone" name="phone" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="location" class="form-label">Location</label>
+                        <input type="text" class="form-control" id="location" name="location" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="summary" class="form-label">Summary</label>
+                        <textarea class="form-control" id="summary" name="summary" rows="3" required></textarea>
+                    </div>
+
+                    <h3>Experience</h3>
+                    <div class="mb-3">
+                        <label for="experience_position" class="form-label">Position</label>
+                        <input type="text" class="form-control" id="experience_position" name="experience_position"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="experience_company" class="form-label">Company</label>
+                        <input type="text" class="form-control" id="experience_company" name="experience_company"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="experience_startDate" class="form-label">Start Date</label>
+                        <input type="text" class="form-control" id="experience_startDate" name="experience_startDate"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="experience_endDate" class="form-label">End Date</label>
+                        <input type="text" class="form-control" id="experience_endDate" name="experience_endDate"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="experience_description" class="form-label">Description</label>
+                        <textarea class="form-control" id="experience_description" name="experience_description"
+                            rows="2" required></textarea>
+                    </div>
+
+                    <h3>Education</h3>
+                    <div class="mb-3">
+                        <label for="education_degree" class="form-label">Degree</label>
+                        <input type="text" class="form-control" id="education_degree" name="education_degree" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="education_institution" class="form-label">Institution</label>
+                        <input type="text" class="form-control" id="education_institution" name="education_institution"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="education_startDate" class="form-label">Start Date</label>
+                        <input type="text" class="form-control" id="education_startDate" name="education_startDate"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="education_endDate" class="form-label">End Date</label>
+                        <input type="text" class="form-control" id="education_endDate" name="education_endDate"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="education_description" class="form-label">Description</label>
+                        <textarea class="form-control" id="education_description" name="education_description" rows="2"
+                            required></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="tenth_marks" class="form-label">10th Marks</label>
+                        <input type="text" class="form-control" id="tenth_marks" name="tenth_marks" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="tenth_college" class="form-label">10th College Name</label>
+                        <input type="text" class="form-control" id="tenth_college" name="tenth_college" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="twelfth_marks" class="form-label">12th Marks</label>
+                        <input type="text" class="form-control" id="twelfth_marks" name="twelfth_marks" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="twelfth_college" class="form-label">12th College Name</label>
+                        <input type="text" class="form-control" id="twelfth_college" name="twelfth_college" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="skills" class="form-label">Skills (comma-separated)</label>
+                        <input type="text" class="form-control" id="skills" name="Skills" required>
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label for="hobbies" class="form-label">Hobbies</label>
+                        <input type="text" class="form-control" id="hobbies" name="hobbies">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="linkedin" class="form-label">LinkedIn</label>
+                        <input type="url" class="form-control" id="linkedin" name="linkedin">
+                    </div>
+                    <div class="mb-3">
+                        <label for="github" class="form-label">GitHub</label>
+                        <input type="url" class="form-control" id="github" name="github">
+                    </div>
+                    <div class="mb-3">
+                        <label for="twitter" class="form-label">Twitter</label>
+                        <input type="url" class="form-control" id="twitter" name="twitter">
+                    </div>
+                    <div class="mb-3">
+                        <label for="leetcode" class="form-label">Leetcode</label>
+                        <input type="url" class="form-control" id="leetcode" name="leetcode">
+                    </div>
+                    <div class="mb-3">
+                        <label for="hackerrank" class="form-label">Hackerrank</label>
+                        <input type="url" class="form-control" id="hackerrank" name="hackerrank">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Create Resume</button>
+                </form>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>

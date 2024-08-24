@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Resume</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 20px;
+            margin: auto;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+        }
+
+        .resume-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .resume-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: .5rem;
+        }
+
+        .resume-header p {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .resume-section {
+            margin-bottom: 2rem;
+        }
+
+        .resume-section h3 {
+            border-bottom: 2px solid #333;
+            padding-bottom: .5rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .resume-section h4 {
+            font-size: 1.25rem;
+            margin-bottom: .5rem;
+        }
+
+        .resume-section p {
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .contact-info p {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .social-links a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+
+        .btn-custom {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h4 class="text-center m-2">Professional Resume</h4>
+    <div class="container mt-5">
+        <div class="resume-header">
+            <h1>
+                <%= resume.username %>
+            </h1>
+            <div class="contact-info">
+                <p>Email: <%= resume.email %>
+                </p>
+                <p>Phone: <%= resume.phone %>
+                </p>
+                <p>Location: <%= resume.location %>
+                </p>
+            </div>
+        </div>
+
+        <div class="resume-section">
+            <h3>Summary</h3>
+            <p>
+                <%= resume.summary %>
+            </p>
+        </div>
+
+        <div class="resume-section">
+            <h3>Experience</h3>
+            <div>
+                <h4>
+                    <%= resume.experience_position %> at <%= resume.experience_company %>
+                </h4>
+                <p><strong>Duration:</strong>
+                    <%= resume.experience_startDate %> - <%= resume.experience_endDate %>
+                </p>
+                <p>
+                    <%= resume.experience_description %>
+                </p>
+            </div>
+        </div>
+
+        <div class="resume-section">
+            <h3>Education</h3>
+            <div>
+                <h4>
+                    <%= resume.education_degree %>, <%= resume.education_institution %>
+                </h4>
+                <p><strong>Duration:</strong>
+                    <%= resume.education_startDate %> - <%= resume.education_endDate %>
+                </p>
+                <p>
+                    <%= resume.education_description %>
+                </p>
+            </div>
+            <div>
+                <h5>10th Grade</h5>
+                <p><strong>Marks:</strong>
+                    <%= resume.tenth_marks %>
+                </p>
+                <p><strong>College:</strong>
+                    <%= resume.tenth_college %>
+                </p>
+            </div>
+            <div>
+                <h5>12th Grade</h5>
+                <p><strong>Marks:</strong>
+                    <%= resume.twelfth_marks %>
+                </p>
+                <p><strong>College:</strong>
+                    <%= resume.twelfth_college %>
+                </p>
+            </div>
+        </div>
+
+        <div class="resume-section">
+            <h3>Skills</h3>
+            <p>
+                <%= resume.Skills %>
+            </p>
+        </div>
+
+        <div class="resume-section">
+            <h3>Hobbies</h3>
+            <p>
+                <%= resume.hobbies %>
+            </p>
+        </div>
+
+        <div class="resume-section">
+            <h3>Social Media</h3>
+            <div class="social-links">
+                <p><strong>LinkedIn:</strong> <a href="<%= resume.linkedin %>">
+                        <%= resume.linkedin %>
+                    </a></p>
+                <p><strong>GitHub:</strong> <a href="<%= resume.github %>">
+                        <%= resume.github %>
+                    </a></p>
+                <p><strong>Twitter:</strong> <a href="<%= resume.twitter %>">
+                        <%= resume.twitter %>
+                    </a></p>
+                <p><strong>Leetcode:</strong> <a href="<%= resume.leetcode %>">
+                        <%= resume.leetcode %>
+                    </a></p>
+                <p><strong>Hackerrank:</strong> <a href="<%= resume.hackerrank %>">
+                        <%= resume.hackerrank %>
+                    </a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center m-2">
+        <a class="btn btn-primary " href="/profile/<%= resume.owner._id %>/resume/<%= resume._id %>/edit"
+            role="button">Edit</a>
+        <a href="/profile/<%= resume.owner._id %>/resume/<%= resume._id %>/delete" class="btn btn-danger"
+            role="button">New</a>
+        <!-- <button class="btn btn-success btn-custom" onclick="downloadResume()">Download</button></a> -->
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
